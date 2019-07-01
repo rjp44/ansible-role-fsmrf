@@ -2,7 +2,7 @@
 +++ configure.ac.new	2019-03-28 14:47:51.023301538 +0000
 @@ -13,7 +13,7 @@
  AC_CONFIG_FILES([src/include/switch_version.h.in:src/include/switch_version.h.template])
- 
+
  AC_CONFIG_AUX_DIR(build/config)
 -AM_INIT_AUTOMAKE
 +AM_INIT_AUTOMAKE([subdir-objects])
@@ -12,7 +12,7 @@
 @@ -1547,6 +1547,20 @@
        AC_MSG_ERROR([You need to either install libedit-dev (>= 2.11) or configure with --disable-core-libedit-support])
        ])])])
- 
+
 +dnl DH: Added for including libwebsockets
 +AC_ARG_WITH(lws,
 +  [AS_HELP_STRING([--with-lws],
@@ -34,7 +34,7 @@
  		src/Makefile
  		src/mod/Makefile
  		src/mod/applications/mod_abstraction/Makefile
-+		src/mod/applications/mod_audio_fork/Makefile
++		src/mod/applications/mod_google_audio_fork/Makefile
  		src/mod/applications/mod_avmd/Makefile
  		src/mod/applications/mod_bert/Makefile
  		src/mod/applications/mod_blacklist/Makefile
